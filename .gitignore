@@ -1,0 +1,13 @@
+
+# adguard
+conf
+work
+
+# nginx proxy manager
+data
+letsencrypt
+
+# portainer
+# data
+
+#fireflyiii
