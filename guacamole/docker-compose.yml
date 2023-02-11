@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+    guacamole:
+        ports:
+            - '8080:8080'
+        volumes:
+            - './config:/config'
+              #environment:
+              #- 'EXTENSIONS=auth-totp'
+        image: maxwaldorf/guacamole
