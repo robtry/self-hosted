@@ -16,3 +16,5 @@ letsencrypt
 # data
 config
 
+# open vpn
+*.ovpn
