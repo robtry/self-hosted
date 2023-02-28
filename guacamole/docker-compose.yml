@@ -4,7 +4,7 @@ services:
         ports:
             - '8080:8080'
         volumes:
-            - './config:/config'
-              #environment:
-              #- 'EXTENSIONS=auth-totp'
+           - '/opt/guacamole/config:/config'
+        environment:
+            - 'EXTENSIONS=auth-totp'
         image: maxwaldorf/guacamole

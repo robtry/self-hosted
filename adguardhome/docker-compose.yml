@@ -12,5 +12,5 @@ services:
        - 853:853/tcp
        - 3000:3000/tcp
      volumes:
-       - ./work:/opt/adguardhome/work
-       - ./conf:/opt/adguardhome/conf
+       - /opt/adguardhome/work:/opt/adguardhome/work
+       - /opt/adguardhome/conf:/opt/adguardhome/conf
