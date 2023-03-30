@@ -1,0 +1,9 @@
+version: '3.3'
+services:
+    vaultwarden:
+        container_name: vaultwarden_container
+        volumes:
+            - '/opt/vaultwarden/data:/data/'
+        ports:
+            - '7000:80'
+        image: 'vaultwarden/server:latest'
