@@ -2,7 +2,7 @@ version: '3.3'
 services:
     guacamole:
         ports:
-            - '8080:8080'
+            - '8090:8080'
         volumes:
            - '/opt/guacamole/config:/config'
         environment:
