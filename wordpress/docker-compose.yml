@@ -1,0 +1,25 @@
+version: '3.1'
+
+services:
+  wordpress:
+    image: wordpress:6.2.2-apache
+    restart: always
+    ports:
+      - 4000:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: ${USER}
+      WORDPRESS_DB_PASSWORD: ${PASS}
+      WORDPRESS_DB_NAME: awesomewp
+    volumes:
+      - /opt/wordpress/wp:/var/www/html
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: awesomewp
+      MYSQL_USER: ${USER}
+      MYSQL_PASSWORD: ${PASS}
+      MYSQL_RANDOM_ROOT_PASSWORD: ${PASS}
+    volumes:
+      - /opt/wordpress/db:/var/lib/mysql
