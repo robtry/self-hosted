@@ -9,8 +9,8 @@ services:
       - TZ=Etc/UTC
     volumes:
       - /opt/duplicati/config:/config
-      - /opt/duplicati/backups:/backups
-      - /opt/duplicati/source:/source
+      - ~/backups:/backups
+      - /opt:/source
     ports:
       - 8200:8200
     restart: unless-stopped
