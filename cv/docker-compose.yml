@@ -1,0 +1,9 @@
+version: '3.3'
+services:
+  nginx:
+    container_name: cv-page
+    ports:
+      - '5000:80'
+    volumes:
+      - '~/robtry.github.io:/usr/share/nginx/html'
+    image: nginx
