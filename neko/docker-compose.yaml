@@ -1,0 +1,21 @@
+version: "3.4"
+services:
+  neko:
+    image: "m1k1o/neko:chromium"
+    restart: "no"
+    shm_size: "4gb"
+    ports:
+      - "8080:8080"
+      - "52000-52100:52000-52100/udp"
+    cap_add:
+      - SYS_ADMIN
+    environment:
+      NEKO_SCREEN: '1920x1080@30'
+      NEKO_PASSWORD: neko
+      NEKO_PASSWORD_ADMIN: admin
+      NEKO_EPR: 52000-52100
+      NEKO_FILE_TRANSFER_ENABLED: true
+      NEKO_NAT1TO1: 192.168.0.210 # local ip address
+    volumes:
+      - ./policies.json:/etc/chromium/policies/managed/policies.json
+      - ./data:/home/neko/.config/chromium
