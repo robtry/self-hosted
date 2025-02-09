@@ -1,51 +1,51 @@
 services:
-  prowlarr:
-    image: linuxserver/prowlarr:latest
-    container_name: prowlarr
-    hostname: prowlarr
-    environment:
-      - PUID=1000
-      - PGID=1000
-    volumes:
-      - /opt/prowlarr/config:/config
-      - /opt/prowlarr/backup:/data/Backup
-      - /opt/downloads:/downloads
-    ports:
-      - 9696:9696
-    network_mode: "host"
-    restart: unless-stopped
-  sonarr:
-    image: linuxserver/sonarr:latest
-    container_name: sonarr
-    hostname: sonarr
-    environment:
-      - PUID=1000
-      - PGID=1000
-    volumes:
-      - /opt/sonarr/config:/config
-      - /opt/sonarr/backup:/data/Backup
-      - /opt/sonarr/tvshows:/data/tvshows
-      - /opt/downloads:/downloads
-    ports:
-      - 8989:8989
-    network_mode: "host"
-    restart: unless-stopped
-  radarr:
-    image: linuxserver/radarr:latest
-    container_name: radarr
-    hostname: radarr
-    environment:
-      - PUID=1000
-      - PGID=1000
-    volumes:
-      - /opt/radarr/config:/config
-      - /opt/radarr/movies:/data/movies
-      - /opt/radarr/backup:/data/Backup
-      - /opt/downloads:/downloads
-    ports:
-      - 7878:7878
-    network_mode: "host"
-    restart: unless-stopped
+  # prowlarr:
+  #   image: linuxserver/prowlarr:latest
+  #   container_name: prowlarr
+  #   hostname: prowlarr
+  #   environment:
+  #     - PUID=1000
+  #     - PGID=1000
+  #   volumes:
+  #     - /opt/prowlarr/config:/config
+  #     - /opt/prowlarr/backup:/data/Backup
+  #     - /opt/downloads:/downloads
+  #   ports:
+  #     - 9696:9696
+  #   network_mode: "host"
+  #   restart: unless-stopped
+  # sonarr:
+  #   image: linuxserver/sonarr:latest
+  #   container_name: sonarr
+  #   hostname: sonarr
+  #   environment:
+  #     - PUID=1000
+  #     - PGID=1000
+  #   volumes:
+  #     - /opt/sonarr/config:/config
+  #     - /opt/sonarr/backup:/data/Backup
+  #     - /opt/sonarr/tvshows:/data/tvshows
+  #     - /opt/downloads:/downloads
+  #   ports:
+  #     - 8989:8989
+  #   network_mode: "host"
+  #   restart: unless-stopped
+  # radarr:
+  #   image: linuxserver/radarr:latest
+  #   container_name: radarr
+  #   hostname: radarr
+  #   environment:
+  #     - PUID=1000
+  #     - PGID=1000
+  #   volumes:
+  #     - /opt/radarr/config:/config
+  #     - /opt/radarr/movies:/data/movies
+  #     - /opt/radarr/backup:/data/Backup
+  #     - /opt/downloads:/downloads
+  #   ports:
+  #     - 7878:7878
+  #   network_mode: "host"
+  #   restart: unless-stopped
   jellyfin:
     image: linuxserver/jellyfin
     container_name: jellyfin
@@ -57,16 +57,17 @@ services:
       - PUID=1000
       - PGID=1000
     volumes:
-      - /opt/jellyfin/config:/config
-      - /opt/radarr/movies:/data/movies
-      - /opt/sonarr/tvshows:/data/tvshows
+      - /home/rob/Documents/jellyfin/config:/config
+      - /home/rob/Documents/jellyfin/movies:/data/movies
+      - /home/rob/Documents/jellyfin/serie:/data/series
+      # - /opt/sonarr/tvshows:/data/tvshows
     network_mode: "host"
     restart: unless-stopped
-  flaresolverr:
-    image: ghcr.io/flaresolverr/flaresolverr:latest
-    container_name: flaresolverr
-    environment:
-      - LOG_LEVEL=info
-    ports:
-      - 8191:8191
-    restart: unless-stopped
+  # flaresolverr:
+  #   image: ghcr.io/flaresolverr/flaresolverr:latest
+  #   container_name: flaresolverr
+  #   environment:
+  #     - LOG_LEVEL=info
+  #   ports:
+  #     - 8191:8191
+  #   restart: unless-stopped
