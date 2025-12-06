@@ -9,6 +9,10 @@ services:
             - PUID=
             - PGID=
             - APP_KEY=base64:huifZXjbOQWIGWLzO3fixtr7HHrnr6Kx192VY1CrhAM=
+            - APP_TIMEZONE=America/Mexico_City
+            - DISPLAY_TIMEZONE=America/Mexico_City
+            - SPEEDTEST_SCHEDULE=6 */3 * * *
+            - SPEEDTEST_SERVERS=8150
             - DB_CONNECTION=sqlite
         volumes:
             - /opt/speedtest-tracker/config:/config
