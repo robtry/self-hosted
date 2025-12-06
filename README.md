@@ -17,3 +17,18 @@ sudo usermod -aG docker $USER
 cd <service-folder>
 docker compose up -d
 ```
+
+## Services
+
+### AdGuard Home
+DNS server with ad and tracking blocking.
+
+- Port: 3000 (web), 53 (DNS)
+- Config: `/opt/adguardhome/`
+
+### Speedtest Tracker
+Automatic internet speed monitoring.
+
+- Port: 3100
+- Config: `/opt/speedtest-tracker/config`
+- Schedule: every 3 hours
